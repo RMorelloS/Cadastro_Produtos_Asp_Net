@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using Aula03_MVC_02.Controllers
+<h2>Index</h2>
+
+<script>
+
+    function alternaExibicao(i) {
+        var obj = document.getElementsByName("nota_" + i);
+        for (item in obj) {
+            if (obj[item].style.display == "revert") {
+                obj[item].style.display = "none";
+            } else {
+                obj[item].style.display = "revert"
+            }
+        }
+    }
+
+</script>
+<style>
+    td {
+        font-size: 30px;
+        border: 1px solid white;
+    }
+    th{
+        font-size:40px;
+        padding-right:40px;
+
+    }
+</style>
+<div class="container">
+    <table  style="border: 1px solid white;margin-bottom:100px;margin-top:100px;"}>
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Tipo (sabão, aroma, aplicação)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var i = 0;
+                var dicionarioNotas = @ProcessaProduto.mostraProdutos();
+            }
+
+
+            @foreach (var nota in dicionarioNotas)
+            {
+                <tr>
+                    <td onclick="alternaExibicao(@i.ToString())">@nota.Split('|')[0]</td>
+                    <td style="display:none" name="@String.Concat("nota_", @i.ToString())">@nota.Split('|')[1]</td>
+                    <td style="display:none" name="@String.Concat("nota_", @i.ToString())">@nota.Split('|')[2]</td>
+                    <td style="display:none" name="@String.Concat("nota_", @i.ToString())">@nota.Split('|')[3]</td>
+                </tr>
+
+                i++;
+            }
+
+        </tbody>
+    </table>
+</div>

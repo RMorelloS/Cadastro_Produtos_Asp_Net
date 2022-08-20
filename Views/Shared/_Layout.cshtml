@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-size:50px">Cadastro de produtos</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="sample-header">
+                        <h1 style="color:white">Cabeçalho</h1>
+                        
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content" style="min-height:600px">
+        @RenderBody()
+        <hr />
+        <!-- Remove the container if you want to extend the Footer to full width. -->
+        <div class="container my-5">
+            <!-- Footer -->
+            <footer class="sample-footer text-center text-lg-start text-white"
+                    style="color:white">
+                <!-- Grid container -->
+                <div class="container p-4 pb-0">
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase" style="font-size:25px">INÍCIO</h5>
+
+                                <p>
+                                    <a href="~/Home" style="font-size:30px" class="text-white">Página inicial</a>
+                                </p>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                    <!-- Section: Social media -->
+                </div>
+            </footer>
+            <!-- Footer -->
+        </div>
+        <!-- End of .container -->
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("cadastraDesodorante", "Desodorante", FormMethod.Post))
+{
+
+    <input type="submit" id="botaoSubmit" hidden />
+    <input type="text" value="@TempData["id"]" readonly="readonly" placeholder="id" name="id" />
+    <br />
+    <input type="text" value="" placeholder="nome" name="nome" />
+    <br />
+    <input type="text" value="" placeholder="tipo aplicação" name="tipoAplicacao" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <button class="cybr-btn" onclick="botaoSubmit.click(); mostrarModal.click()">
+        Cadastrar <span aria-hidden>_</span>
+        <span aria-hidden class="cybr-btn__glitch">Buttons_</span>
+        <span aria-hidden class="cybr-btn__tag">Desodorante</span>
+    </button>
+    if (TempData["result"] != null)
+    {
+        <script type="text/javascript">
+            alert("Cadastrado com sucesso!");
+        </script>
+    }
+}
